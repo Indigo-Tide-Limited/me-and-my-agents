@@ -6,7 +6,7 @@ across ownership and organisation boundaries, while each person (or organisation
 control of their own identity, information, relationships, and decisions.
 
 > **Status: preliminary public definition.** MAMA is not an established standard, not an
-> implemented platform, and this document does not represent agreement from Erik or any
+> implemented platform, and this document does not represent agreement from any
 > other named third party. It is a starting point for public discussion and refinement.
 
 ## Why this exists
