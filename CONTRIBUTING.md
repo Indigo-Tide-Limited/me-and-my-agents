@@ -29,6 +29,12 @@ When proposing or reviewing edits, make sure the change still:
   creates an obligation on the other.
 - Keeps the hub optional and non-mandatory — don't imply the open model requires any
   particular hub.
+- Keeps the hub's baseline guarantee framed as a floor, not a ceiling — don't imply it matches
+  every feature a sophisticated swarm might otherwise provide.
+- Keeps the demo's communication/filtering scope limited to invitations, accept/decline,
+  blocking, rate limits, and a simple inbox — don't add AI relevance/urgency/attention
+  filtering to that baseline without marking it as optional, not-yet-authorised future work
+  (see CONNECTIONS.md's Intelligent Attention Management section).
 - Keeps shared-project/activity access scoped separately per activity — don't imply one
   activity's access extends to another. How that access relates to any underlying bilateral
   connection(s), and what happens to it (or to other participants' access) if such a connection
