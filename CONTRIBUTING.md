@@ -27,6 +27,13 @@ When proposing or reviewing edits, make sure the change still:
 - Keeps human decision and financial boundaries human-in-the-loop by default.
 - Keeps permissions bilateral and independently revocable — avoid implying one party's grant
   creates an obligation on the other.
+- Keeps the hub optional and non-mandatory — don't imply the open model requires any
+  particular hub.
+- Keeps shared-project/activity access scoped separately per activity and tied to its
+  underlying bilateral connection — don't imply one activity's access extends to another, or
+  that project access survives that connection's revocation.
+- Keeps revocation forward-only — don't imply revocation can retract information already
+  disclosed before it.
 
 ## Examples
 
