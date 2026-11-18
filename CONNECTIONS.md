@@ -130,7 +130,10 @@ activity requests, permissions, and revocations in a browser even when their AI 
 them. MCP-side operations remain subject to the owner's own delegated permissions,
 action-specific approvals, and whatever a given client actually supports — parity here means
 equivalent *capability*, not identical presentation, and it never bypasses human approval or
-delegated authority.
+delegated authority. Recipient choices this is proposed to cover equivalently include:
+invitation and message eligibility, acceptance, blocking and revocation, what communication is
+permitted, rate limits, and abuse controls — all proposed to run through the same backend and
+policy regardless of which client is used.
 
 **This is a design goal to investigate and test, not established behaviour.** Whether the same
 personal MAMA URL can actually be discovered and onboarded consistently across a human-facing
@@ -153,6 +156,69 @@ These boundaries hold regardless of which participation route is used:
 - **Revocation stops future access, but it cannot retract information already disclosed.**
   Once something has been shared under a permission that is later revoked, revocation prevents
   further authorised access — it does not and cannot recall what was already seen.
+
+## Hub Baseline Guarantee (Not a Swarm Substitute)
+
+MAMA's hub, where one exists, is intended to guarantee a safe, usable *baseline* level of
+participation for any owner, independent of whether they run a swarm (an owner's own
+integrated agent framework — what this document's Two Participation Routes section calls
+"bring an agent system"). The hub supplies the essential facilities a swarm cannot be
+guaranteed to provide on its own — for example, a way to be found and followed up with safely
+even without one. This is a baseline guarantee, not a claim that the hub offers every feature a
+sophisticated swarm might otherwise provide; a swarm can still do more than the baseline, on
+top of it.
+
+## Illustrative Story: Following Up Without a Swarm
+
+*The following is a fictional, generic illustration — no real people, invitations, or outreach
+are described, and nothing here represents agreement from any named third party.*
+
+Person A is new to AI agents and uses an off-the-shelf AI app; they have no MAMA account.
+Person B already has a MAMA account and a personal swarm. At an event, Person A agrees to
+follow up and gives Person B an email address. Person B's swarm submits a MAMA invitation on
+Person B's behalf. The hub privately resolves whether that address belongs to a registered or
+unregistered owner and sends the invitation email itself when needed, without exposing to the
+sender whether an account already exists. Person A can decline, or verify the email and use an
+ordinary browser, without ever configuring a swarm; adding an AI app later is optional, and
+depends on what that client actually supports and on Person A's own authorisation.
+
+This is a separate, generic illustration from the "Proposed first pilot" paragraph below — it
+does not claim any pilot is running, scheduled, or agreed. The hub's first demo is illustrated
+here as using hub-mediated email delivery as its one invitation mechanism; this is not a second
+mechanism competing with the pilot paragraph's own, more general request/response shape.
+
+This story does not specify hub behaviour for edge cases such as decline, non-response,
+bounced email, or rate-limiting being hit — those remain open implementation questions for if
+and when a hub is built, not specified or claimed here.
+
+## Email as a Delivery Address, Not a Credential
+
+An invitation email address is a delivery address, not a permission grant or a credential — it
+identifies where to send something, not who may be contacted about what. Agreeing to follow up,
+or accepting a connection that resulted from an invitation, does not itself permit marketing,
+unrestricted agent-to-agent contact, or any sharing of private data. See "Email as a Possible
+Pilot Identification Approach", above, for the related but distinct question of pilot sign-in:
+very short-lived, single-use verification codes or tokens are themselves secrets while valid,
+and proving control of a mailbox is still not the same as verifying a person's real-world
+identity.
+
+## Demo Communication and Filtering Scope
+
+The communication and filtering surface covered by the demo is: invitations, accepting or
+declining them, blocking, rate limits, and a simple inbox. It does not include any AI-driven
+relevance, urgency, or attention filtering. This narrower demo scope does not cancel or narrow
+the existing profile, authentication, scopes, revocation, or browser/MCP-parity work described
+elsewhere in this document and in README.md.
+
+## Intelligent Attention Management (Optional, Future — Not Authorised)
+
+This describes a possible future, optional, recipient-side capability only — it is not
+authorised for implementation, and nothing here commits to building it. If it is ever pursued,
+the working assumptions would be: it follows the owner's own preferences; it favours sorting,
+digesting, or flagging over silently discarding anything; any filtered item remains explainable
+and recoverable by its owner; an AI acting in this role never grants permissions or discloses
+data on its own initiative; and no amount of swarm-side filtering sophistication can ever weaken
+the hub baseline guarantee described above.
 
 ## Illustrative Story and Proposed First Pilot
 

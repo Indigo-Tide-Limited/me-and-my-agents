@@ -110,8 +110,10 @@ MAMA also describes how a relationship actually gets started and who can take pa
 links for introductions, per-person profiles with owner-set defaults, connection requests with
 independent and revocable permissions, optional shared projects, two equally-supported ways to
 participate (connecting an existing AI app, or bringing your own agent system), and an optional,
-non-mandatory coordinating hub. See [CONNECTIONS.md](CONNECTIONS.md) for the detailed,
-preliminary model, worked fictional examples, and explicit capability/security boundaries.
+non-mandatory coordinating hub, along with the baseline participation guarantee a hub is meant
+to provide without requiring a swarm and the communication limits a demo is scoped to. See
+[CONNECTIONS.md](CONNECTIONS.md) for the detailed, preliminary model, worked fictional examples,
+and explicit capability/security boundaries.
 
 ## Status
 
