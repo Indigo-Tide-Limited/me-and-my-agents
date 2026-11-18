@@ -98,9 +98,20 @@ solution:
   agents could use to exchange the kinds of messages a relationship requires.
 - **MCP** (Model Context Protocol) is described as a *possible* client/tool interface an agent
   could use to reach tools or services on its owner's behalf.
-- A **brokerage** is described as a *potential*, separate service that could help owners'
-  agents discover and establish relationships with each other — it is not part of this
-  specification and is not implied to exist as a running service.
+- A **hub** is described as a *potential*, separate, non-mandatory coordinating service that
+  could issue personal links, manage profiles and connection/activity permissions, and relay or
+  queue scoped requests and responses between owners' agents — it is not part of this
+  specification, is not implied to exist as a running service, and the open MAMA model does not
+  require any particular hub. See [CONNECTIONS.md](CONNECTIONS.md) for more detail.
+
+## Connections and Participation
+
+MAMA also describes how a relationship actually gets started and who can take part: personal
+links for introductions, per-person profiles with owner-set defaults, connection requests with
+independent and revocable permissions, optional shared projects, two equally-supported ways to
+participate (connecting an existing AI app, or bringing your own agent system), and an optional,
+non-mandatory coordinating hub. See [CONNECTIONS.md](CONNECTIONS.md) for the detailed,
+preliminary model, worked fictional examples, and explicit capability/security boundaries.
 
 ## Status
 
