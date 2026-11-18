@@ -26,16 +26,18 @@ if anything, to permit.
 
 ## Email as a Possible Pilot Identification Approach
 
-One possible way to bootstrap identification during an early pilot is a short-lived,
-single-use email sign-in link or code. Any such pilot verification token should expire very
-quickly, and should be submittable through **either** the MCP route **or** the website — not
-website-only — so that neither participation route is disadvantaged during identification. This
-proves control of a mailbox at that moment — it does **not** prove a person's real-world or
-organisational identity, and the link or code itself is not a secret in the way a long-lived
-credential would be. If a link or code is reused or leaked, it should be treated as a
-potentially compromised credential: the owner can revoke and reissue it, but — consistent with
-the Revocation and Trust section of README.md — revoking it cannot retract any information that
-was already disclosed while it was valid.
+One possible way to bootstrap identification during an early pilot is a short-lived email
+sign-in link or code, single-use where appropriate. Any such pilot verification token should
+expire very quickly, and should be submittable through **either** the MCP route **or** the
+website — not website-only — so that neither participation route is disadvantaged during
+identification. This proves control of a mailbox at that moment; it is **not conclusive** proof
+of a person's real-world or organisational identity. **While valid, the link or code is itself a
+secret, bearer-style credential** — whoever presents it is treated as the mailbox holder — **and
+must be protected from disclosure accordingly, including in logs and in AI tool/chat
+histories.** If a link or code is reused, leaked, or otherwise disclosed, it should be treated
+as a potentially compromised credential: the owner can revoke and reissue it, but — consistent
+with the Revocation and Trust section of README.md — revoking it **cannot retract** any
+information that was already disclosed while it was valid.
 
 ## Public Profiles and Owner-Set Defaults
 
@@ -43,10 +45,14 @@ Each owner may hold a small, per-person public profile and a set of reasonable d
 permissions applied to *new* connection requests (for example, whether to accept an
 introduction at all, or what minimal information to share with it). A default is the owner's
 own baseline choice, not blanket or global access, and it composes with — rather than replaces —
-the per-relationship scoping described in README.md's Selective Sharing section. Defaults are
-**not retroactive**: changing a default only affects future connection requests. Permissions
-already granted on an existing connection are governed by that connection's own Bilateral,
-Independent Permissions and must be changed on that connection directly.
+the per-relationship scoping described in README.md's Selective Sharing section. Whether
+defaults should be retroactive is still an open design question under discussion; the current
+working assumption is that they are **not retroactive** — changing a default would only affect
+future connection requests — but this has not been decided. Regardless of how that question is
+resolved, permissions already granted on an existing connection remain governed by that
+connection's own Independent, Inspectable, Adjustable, and Revocable permissions (see Connection
+Requests and Permissions, below) and must be changed on that connection directly — defaults do
+not override them.
 
 ## Connection Requests and Permissions
 
@@ -70,10 +76,13 @@ relationships — it does not redefine what a "relationship" is. A connection do
 automatically grant access to any shared project, and being part of one project does not grant
 access to another.
 
-**Edge case.** A participant's access to a shared project rides on top of their underlying
-bilateral connection to the project (or to another participant in it). If that underlying
-connection is revoked, that participant's project access is revoked with it. The project itself
-continues for its remaining participants, and their own access is unaffected.
+**Edge case (tentative — not yet decided).** A participant's access to a shared project rides on
+top of their underlying bilateral connection to the project (or to another participant in it).
+Whether revoking that underlying connection should automatically cascade to remove the
+participant's project access is a design question still under discussion, not a settled rule —
+this document does not mandate automatic cascading removal. Whatever is eventually decided, the
+project itself continues for its remaining participants, their own access is unaffected, and the
+core model stays Independent, Inspectable, Adjustable, and Revocable per connection.
 
 ## One-Time Connection per Environment
 
@@ -165,6 +174,9 @@ its own side of the connection and permissions independently, the request and re
 both ways with identifiable attribution, and either side can revoke access afterwards and show
 that a later request is then refused. As above, this paragraph proposes a shape for a pilot — it
 does not claim one is running, scheduled, or agreed by anyone.
+
+Separately, a technical demonstration of some of these ideas is in progress under a separate
+commission; no platform is deployed, and this document is not a status report on that work.
 
 ## Status and Licensing
 
