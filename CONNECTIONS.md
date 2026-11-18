@@ -196,11 +196,11 @@ and when a hub is built, not specified or claimed here.
 An invitation email address is a delivery address, not a permission grant or a credential — it
 identifies where to send something, not who may be contacted about what. Agreeing to follow up,
 or accepting a connection that resulted from an invitation, does not itself permit marketing,
-unrestricted agent-to-agent contact, or any sharing of private data; accepting a relationship
-never exposes private data by itself. See "Email as a Possible Pilot Identification Approach",
-above, for the related but distinct question of pilot sign-in: very short-lived, single-use
-verification codes or tokens are themselves secrets while valid, and proving control of a
-mailbox is still not the same as verifying a person's real-world identity.
+unrestricted agent-to-agent contact, or any sharing of private data. See "Email as a Possible
+Pilot Identification Approach", above, for the related but distinct question of pilot sign-in:
+very short-lived, single-use verification codes or tokens are themselves secrets while valid,
+and proving control of a mailbox is still not the same as verifying a person's real-world
+identity.
 
 ## Demo Communication and Filtering Scope
 
