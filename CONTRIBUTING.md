@@ -29,11 +29,11 @@ When proposing or reviewing edits, make sure the change still:
   creates an obligation on the other.
 - Keeps the hub optional and non-mandatory — don't imply the open model requires any
   particular hub.
-- Keeps shared-project/activity access scoped separately per activity and tied to its
-  underlying bilateral connection — don't imply one activity's access extends to another.
-  Whether project access automatically ends when that connection is revoked is still an open
-  question (see CONNECTIONS.md's Shared Projects edge case) — don't assert either outcome as
-  settled.
+- Keeps shared-project/activity access scoped separately per activity — don't imply one
+  activity's access extends to another. How that access relates to any underlying bilateral
+  connection(s), and what happens to it (or to other participants' access) if such a connection
+  is revoked, are still open questions (see CONNECTIONS.md's Shared Projects edge case) — don't
+  assert any particular outcome as settled.
 - Keeps revocation forward-only — don't imply revocation can retract information already
   disclosed before it.
 
