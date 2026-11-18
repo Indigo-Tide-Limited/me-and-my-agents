@@ -45,14 +45,14 @@ Each owner may hold a small, per-person public profile and a set of reasonable d
 permissions applied to *new* connection requests (for example, whether to accept an
 introduction at all, or what minimal information to share with it). A default is the owner's
 own baseline choice, not blanket or global access, and it composes with — rather than replaces —
-the per-relationship scoping described in README.md's Selective Sharing section. Whether
-defaults should be retroactive is still an open design question under discussion; the current
-working assumption is that they are **not retroactive** — changing a default would only affect
-future connection requests — but this has not been decided. Regardless of how that question is
-resolved, permissions already granted on an existing connection remain governed by that
-connection's own Independent, Inspectable, Adjustable, and Revocable permissions (see Connection
-Requests and Permissions, below) and must be changed on that connection directly — defaults do
-not override them.
+the per-relationship scoping described in README.md's Selective Sharing section. Whether, and
+how, a changed default should affect permissions already granted on an existing connection is an
+open design question, not yet decided — this document does not assert that defaults are
+retroactive, and does not assert that they are not. Whatever is eventually decided, an existing
+connection's permissions remain Independent, Inspectable, Adjustable, and Revocable (see
+Connection Requests and Permissions, below) on their own terms — an owner can always see,
+narrow, widen, or revoke what a connection permits — without this document mandating any
+particular mechanism by which that happens.
 
 ## Connection Requests and Permissions
 
@@ -76,13 +76,14 @@ relationships — it does not redefine what a "relationship" is. A connection do
 automatically grant access to any shared project, and being part of one project does not grant
 access to another.
 
-**Edge case (tentative — not yet decided).** A participant's access to a shared project rides on
-top of their underlying bilateral connection to the project (or to another participant in it).
-Whether revoking that underlying connection should automatically cascade to remove the
-participant's project access is a design question still under discussion, not a settled rule —
-this document does not mandate automatic cascading removal. Whatever is eventually decided, the
-project itself continues for its remaining participants, their own access is unaffected, and the
-core model stays Independent, Inspectable, Adjustable, and Revocable per connection.
+**Edge case (tentative — not yet decided).** How a shared project's access relates to any
+underlying bilateral connection(s) between its participants is still an open design question.
+This document does not assume every participant's project access necessarily rests on a single
+underlying bilateral connection, and does not assume that revoking any such connection would or
+would not cascade to remove that participant's project access, or that it would leave every
+other participant's access unaffected — all of that is undecided. Whatever is eventually
+decided, each participant's own permissions for the project remain Independent, Inspectable,
+Adjustable, and Revocable, scoped separately from any other project or connection.
 
 ## One-Time Connection per Environment
 
@@ -165,18 +166,20 @@ permit. Alice's AI, in turn, asks her to approve the new connection and whatever
 requested. Each of them decides independently, and either can later adjust or revoke whatever
 permissions they each chose to grant.
 
-**Proposed first pilot (illustrative only — not an approved build, not a confirmed
-collaboration).** A small, fictional pilot could exercise both participation routes together:
-one owner connects an existing AI app to a shared MAMA service and sends a deliberately
-non-sensitive request (such as a simple introduction) to a second owner, who has instead
-integrated their own agent system through an adapter. Both sides authenticate, each approves
-its own side of the connection and permissions independently, the request and response travel
-both ways with identifiable attribution, and either side can revoke access afterwards and show
-that a later request is then refused. As above, this paragraph proposes a shape for a pilot — it
-does not claim one is running, scheduled, or agreed by anyone.
+**Proposed first pilot (illustrative only — fictional, not a description of an actual pilot,
+deployment, or confirmed collaboration).** A small, fictional pilot could exercise both
+participation routes together: one owner connects an existing AI app to a shared MAMA service
+and sends a deliberately non-sensitive request (such as a simple introduction) to a second
+owner, who has instead integrated their own agent system through an adapter. Both sides
+authenticate, each approves its own side of the connection and permissions independently, the
+request and response travel both ways with identifiable attribution, and either side can revoke
+access afterwards and show that a later request is then refused. As above, this paragraph
+proposes a shape for a pilot — it does not claim one is running, scheduled, deployed, or agreed
+by anyone.
 
-Separately, a technical demonstration of some of these ideas is in progress under a separate
-commission; no platform is deployed, and this document is not a status report on that work.
+Separately, implementation of a technical demonstration of some of these ideas is in progress
+under a separate commission. No platform is deployed, this document is not a status report on
+that work, and nothing here implies any named participant has agreed to take part.
 
 ## Status and Licensing
 
