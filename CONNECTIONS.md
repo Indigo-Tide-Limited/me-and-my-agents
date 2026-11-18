@@ -12,18 +12,30 @@ have. It is as **preliminary** as the rest of this specification.
 
 An owner may hold a personal MAMA identifier — a link that can be shared to invite a connection,
 for example `https://mama.example/id/alice` (illustrative only; `mama.example` is not a real,
-reachable service). Sharing a link is an introduction, not a grant of access: the recipient
-still has to request a connection, and the owner still decides what, if anything, to permit.
+reachable service). The same URL is intended to be understandable two ways: as an ordinary,
+human-readable webpage when a person opens it in a browser, and as an agent-readable identifier
+when an AI reads or is given it. A nontechnical user might, for instance, supply that same URL
+to their AI app as the address of their MCP connector — the identifier does not require a
+separate technical form to be useful to either a human or an agent.
+
+**The URL is an identifier only. It is never a credential and never an authorisation grant.**
+Possessing or entering it identifies who is being introduced — it does not, by itself, prove
+real-world identity, authenticate anyone, or permit any access. Sharing a link is an
+introduction: the recipient still has to request a connection, and the owner still decides what,
+if anything, to permit.
 
 ## Email as a Possible Pilot Identification Approach
 
 One possible way to bootstrap identification during an early pilot is a short-lived,
-single-use email sign-in link or code. This proves control of a mailbox at that moment — it
-does **not** prove a person's real-world or organisational identity, and the link or code
-itself is not a secret in the way a long-lived credential would be. If a link or code is reused
-or leaked, it should be treated as a potentially compromised credential: the owner can revoke
-and reissue it, but — consistent with the Revocation and Trust section of README.md — revoking
-it cannot retract any information that was already disclosed while it was valid.
+single-use email sign-in link or code. Any such pilot verification token should expire very
+quickly, and should be submittable through **either** the MCP route **or** the website — not
+website-only — so that neither participation route is disadvantaged during identification. This
+proves control of a mailbox at that moment — it does **not** prove a person's real-world or
+organisational identity, and the link or code itself is not a secret in the way a long-lived
+credential would be. If a link or code is reused or leaked, it should be treated as a
+potentially compromised credential: the owner can revoke and reissue it, but — consistent with
+the Revocation and Trust section of README.md — revoking it cannot retract any information that
+was already disclosed while it was valid.
 
 ## Public Profiles and Owner-Set Defaults
 
@@ -109,6 +121,13 @@ them. MCP-side operations remain subject to the owner's own delegated permission
 action-specific approvals, and whatever a given client actually supports — parity here means
 equivalent *capability*, not identical presentation, and it never bypasses human approval or
 delegated authority.
+
+**This is a design goal to investigate and test, not established behaviour.** Whether the same
+personal MAMA URL can actually be discovered and onboarded consistently across a human-facing
+browser flow and a given AI client's MCP-connector flow — and what client-specific onboarding
+steps that requires — is proposed work to be tried and tested, not a standard guarantee that
+holds across every client today. Nothing here should be read as claiming this already works
+uniformly.
 
 ## Capability and Security Boundaries
 
